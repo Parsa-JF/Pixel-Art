@@ -23,6 +23,11 @@ body{
 
 }
 
+#description{
+    color: white;
+    font-size:2vh;
+}
+
 #griddy{
     display:flex ;
     width: 80vh;
