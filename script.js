@@ -1,7 +1,12 @@
+//grid building
 const gridBox =  document.querySelector('#griddy');
-
 function updateCanvas(n)
 {
+    while ( gridBox.firstChild )
+    {
+        gridBox.removeChild( gridBox.firstChild );
+    }
+
     for(i = 0; i<n; i++)
     {
         const row = document.createElement('div');
@@ -18,17 +23,35 @@ function updateCanvas(n)
 }
 
 
-
-size = prompt("enter your desired canvas size");
+//grid siziing
+var size = 10;   //default size 5
 updateCanvas(size);
+var slider = document.getElementById("myRange");
+var minis = document.querySelectorAll('.mini');
 
-const minis = document.querySelectorAll('.mini');
+slider.oninput = function()
+{
+    size = slider.value;
+    updateCanvas(size);
+    minis = document.querySelectorAll('.mini');
+    updateMinis(color);
+}
 
-minis.forEach((mini) => {
-
-    mini.addEventListener('mouseenter', () => {
-      mini.setAttribute("style", "background-color: black");
+//color picker
+var color = "black"; // default color black
+updateMinis(color);
+var colorPicker = document.querySelector('#colorpicker');
+colorPicker.addEventListener('input', () => {
+    color = colorPicker.value;
+    updateMinis(color);
     });
-  });
 
-
+function updateMinis(c)
+{
+    minis.forEach((mini) => {
+        
+        mini.addEventListener('click', () => {
+        mini.setAttribute("style", "background-color: " + c);
+        });
+    });
+}

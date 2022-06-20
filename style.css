@@ -1,9 +1,35 @@
+
+@font-face {
+    font-family: Pixel;
+    src: url(VT323-Regular.ttf);
+}
+
+
+body{
+    background-color: #EDFAFD;
+    background-image: url(back.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Pixel;
+}
+
+#header{
+    flex:1;
+    width: 100vh;
+    text-align: center;
+    font-size: 6vh;
+    color: white;
+
+}
+
 #griddy{
     display:flex ;
     width: 80vh;
     height: 80vh;
     border: 1px solid black; 
     flex-direction: column;
+    background-color: white;
 }
 
 .row{
@@ -18,3 +44,37 @@
     margin: 0px;
 
 }
+
+.footer{
+    width :80vh;
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.sizer{
+    display: flex;
+    align-items: center;
+}
+.colorEdit{
+    display:flex;
+    align-items: center;
+}
+
+#myRange{
+    -webkit-appearance: none;
+    background-color: #d0ff4f;
+    border: 2px solid #5b696A
+
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #83cb53; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+
+
+  }
