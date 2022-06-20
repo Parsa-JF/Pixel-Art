@@ -1,0 +1,20 @@
+#griddy{
+    display:flex ;
+    width: 80vh;
+    height: 80vh;
+    border: 1px solid black; 
+    flex-direction: column;
+}
+
+.row{
+    flex: 1; 
+    display: flex;
+
+}
+
+.mini{
+    flex: 1; 
+    border: 1px solid black;
+    margin: 0px;
+
+}
