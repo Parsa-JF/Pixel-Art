@@ -1,3 +1,11 @@
+var mouseDown = 0;
+document.body.onmousedown = function() { 
+  ++mouseDown;
+}
+document.body.onmouseup = function() {
+  --mouseDown;
+}
+
 //grid building
 const gridBox =  document.querySelector('#griddy');
 function updateCanvas(n)
@@ -48,10 +56,24 @@ colorPicker.addEventListener('input', () => {
 
 function updateMinis(c)
 {
-    minis.forEach((mini) => {
-        
-        mini.addEventListener('click', () => {
-        mini.setAttribute("style", "background-color: " + c);
+    minis.forEach((mini) => 
+    {
+
+        mini.addEventListener('mousedown', function(e)
+        {
+                mini.setAttribute("style", "background-color: " + c);
         });
+        mini.addEventListener('mouseover', function(e)
+        {
+            if(e.buttons == 1)
+            {
+                mini.setAttribute("style", "background-color: " + c);
+            }
+
+            
+        });
+
+        
     });
+
 }
